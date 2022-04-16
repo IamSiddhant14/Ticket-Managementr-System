@@ -1,0 +1,83 @@
+/* body{
+    background-color: black;
+} */
+
+*{
+    box-sizing: border-box;
+    /* Here it mean all things are including in the height and width: */
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.toolbox-cont {
+    height: 5rem;
+    background-color: black;
+    display: flex;
+    align-items: center;
+
+}
+
+  .toolbox-cont > * {
+    margin-left: 4rem;
+    border-radius: 3px;
+
+  }
+
+  .toolbox-priority-cont {
+    height: 3.5rem;
+    width: 18rem;
+    background-color: #596275;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .action-btn-cont {
+    height: 3.5rem;
+    width: 7rem;
+    background-color:#596275;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .color {
+    height: 1.5rem;
+    width: 3rem;
+  }
+
+  .lightpink {
+    background-color: rgb(255, 0, 0);
+  }
+  
+  .lightgreen {
+    background-color:rgb(226, 254, 12);
+  }
+  
+  .lightblue {
+    background-color:  rgb(126, 199, 227);
+  }
+
+  .black{
+      background-color: rgb(233, 241, 233);
+  }
+
+  .add-btn>*{
+    font-size: xx-large;
+    font-weight: bold;
+    color: aliceblue;
+  }
+
+  .remove-btn>*{
+    font-size: xx-large;
+    font-weight: bold;
+    color: aliceblue;
+  }
+
+
+
+
+
