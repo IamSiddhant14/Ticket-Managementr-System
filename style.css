@@ -1,13 +1,13 @@
-/* body{
-    background-color: black;
-} */
+body{
+    background-color: rgb(199,194,194);
+}
 
-*{
+* {
     box-sizing: border-box;
     /* Here it mean all things are including in the height and width: */
 }
 
-body{
+body {
     margin: 0;
     padding: 0;
 }
@@ -20,64 +20,137 @@ body{
 
 }
 
-  .toolbox-cont > * {
+.toolbox-cont>* {
     margin-left: 4rem;
     border-radius: 3px;
 
-  }
+}
 
-  .toolbox-priority-cont {
+.toolbox-priority-cont {
     height: 3.5rem;
-    width: 18rem;
+    width: 24rem;
     background-color: #596275;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-  }
+}
 
-  .action-btn-cont {
+.action-btn-cont {
     height: 3.5rem;
-    width: 7rem;
-    background-color:#596275;
+    width: 8rem;
+    background-color: #596275;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-  }
-  
-  .color {
-    height: 1.5rem;
-    width: 3rem;
-  }
+    align-items: center;
+}
 
-  .lightpink {
+.color {
+    height: 2rem;
+    width: 3.5rem;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    font-size:small ;
+}
+
+.color:hover {
+    -webkit-box-shadow: inset 6px -3px 59px -29px rgba(8,8,8,1);
+    -moz-box-shadow: inset 6px -3px 59px -29px rgba(8,8,8,1);
+    box-shadow: inset 6px -3px 59px -29px rgba(8,8,8,1);
+}
+
+.lightpink {
     background-color: rgb(255, 0, 0);
-  }
-  
-  .lightgreen {
-    background-color:rgb(226, 254, 12);
-  }
-  
-  .lightblue {
-    background-color:  rgb(126, 199, 227);
-  }
+}
 
-  .black{
-      background-color: rgb(233, 241, 233);
-  }
+.lightgreen {
+    background-color: rgb(226, 254, 12);
+}
 
-  .add-btn>*{
+.lightblue {
+    background-color: rgb(126, 199, 227);
+}
+
+.black {
+    background-color: rgb(233, 241, 233);
+}
+
+.add-btn>* {
     font-size: xx-large;
     font-weight: bold;
     color: aliceblue;
-  }
+    transition: font-size .5s ease;
+    /* transition: color 1s ease-in; */
+}
 
-  .remove-btn>*{
+.remove-btn>* {
     font-size: xx-large;
     font-weight: bold;
     color: aliceblue;
-  }
+    transition: font-size .5s ease;
+    /* transition: color 1s ease-in; */
+}
+
+.remove-btn>*:hover {
+    /* selects all the child element which are present inside this div */
+    color: black;
+    font-size: 3.5em;
+
+}
+
+.add-btn>*:hover {
+    color: black;
+    font-size: 3.5em;
+
+}
 
 
+.modal-cont {
+    height: 50vh;
+    width: 45vw;
+    background: black;
+    /* With postion absolute it becames indepent of the screen */
+    position: absolute;
+    top: calc((100vh - 50vh) / 2);
+    left: calc((100vw - 45vw) / 2);
+    border-radius: 15px;
+    display: flex;
+    overflow: hidden;
+    
+}
 
+.textarea-cont{
 
+    height : 100%;
+    width: 80%;
+    outline: none;
+    border: 0px;
+    font-size: xx-large;
+    resize: none;
+    padding-top: 10px;
+    padding-left: 10px;
+    
+}
 
+.priority-colors-cont{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  
+}
+
+.priority-color{
+    height: 3rem;
+    width: 5rem;
+    border-radius: 5px;
+}
+
+.priority-color:hover {
+    -webkit-box-shadow: inset 6px -3px 59px -29px rgba(8,8,8,1);
+    -moz-box-shadow: inset 6px -3px 59px -29px rgba(8,8,8,1);
+    box-shadow: inset 6px -3px 59px -29px rgba(8,8,8,1);
+}
