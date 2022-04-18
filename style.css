@@ -188,7 +188,7 @@ body {
 
 .ticketcolor{
     height: 2rem;
-    background-color: aliceblue;
+    /* background-color: unset; */
 }
 
 .ticket-id{
@@ -210,5 +210,9 @@ border-radius: 10px;
 font-size: larger;
 padding: 3px;
 
+}
+
+.active{
+    border: 3px solid #08ff10; 
 }
 
