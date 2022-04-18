@@ -46,20 +46,19 @@ body {
     width: 8rem;
     background-color: #596275;
     display: flex;
-    align-items: center;
     justify-content: space-evenly;
     align-items: center;
-    margin-left: 300px;
+    margin-left: 500px;
     border-radius: 10px;
 }
 
 .color {
     height: 2rem;
     width: 3.5rem;
-    display: flex;
+    /* display: flex; */
     /* justify-content: center;
     align-items: center; */
-    font-size:small ;
+    /* font-size:small ; */
     border-radius: 5px;
 }
 
@@ -109,7 +108,7 @@ body {
 }
 
 .add-btn>*:hover {
-    color: black;
+    /* color: black; */
     font-size: 3.5em;
 
 }
@@ -211,11 +210,11 @@ margin: 10px;
 border-radius: 10px;
 font-size: 30px;
 padding: 10px;
-text-transform:capitalize 
+/* text-transform:capitalize  */
 
 }
 
 .active{
-    border: 3px solid #08ff10; 
+    border: 10px solid black; 
 }
 

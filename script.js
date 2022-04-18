@@ -1,14 +1,14 @@
 let addBtn = document.querySelector(".add-btn");
 
-let modalCont = document.querySelector(".modal-cont");
+let modalCont = document.querySelector(".modal-cont");// Text input
 
-let mainCont = document.querySelector('.main-cont');
+let mainCont = document.querySelector('.main-cont');// Ticket
 
 let colors = ['lightpink' , 'lightblue' , 'lightgreen' , 'black']
 
 let modalPriorityColor = colors[colors.length-1] // black
 
-let allPriorityColors = document.querySelectorAll('.priority-color')
+let allPriorityColors = document.querySelectorAll('.priority-color')//This will return us a nodeList
 
 let flag = true;
 
@@ -68,13 +68,18 @@ function createTicket(ticketKaColorClass  , task) {
 //Changing Priority Colors
 
 allPriorityColors.forEach(function(colorElem){
+
        colorElem.addEventListener('click' , function(e){
+
             allPriorityColors.forEach(function(priorityColorElem){
                priorityColorElem.classList.remove('active')
+
             })
+
             colorElem.classList.add('active')
 
-            modalPriorityColor = colorElem.classList[0];
+            modalPriorityColor = colorElem.classList[0];//Classlist is also a nodelist
+            
        })
 })
 
