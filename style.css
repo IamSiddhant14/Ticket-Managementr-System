@@ -126,6 +126,7 @@ body {
     border-radius: 15px;
     display: none;
     overflow: hidden;
+
     
 }
 
@@ -169,6 +170,7 @@ body {
      align-items: center;
      justify-content: space-evenly;
      margin-top: 40px;
+     flex-wrap: wrap;
      
 }
 
@@ -178,6 +180,10 @@ body {
    background-color: black ;
    border-radius: 20px;
    overflow: hidden;
+}
+
+.tic{
+    background-color: black ; 
 }
 
 .ticketcolor{
