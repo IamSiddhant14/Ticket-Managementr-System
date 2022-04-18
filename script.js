@@ -12,6 +12,12 @@ let allPriorityColors = document.querySelectorAll('.priority-color')
 
 let flag = true;
 
+let taskAreaCont = document.querySelector('.textarea-cont')
+
+let removeBtn = document.querySelector('.remove-btn')
+let removeFlag = false;
+
+
 addBtn.addEventListener("click", function (e) {
        //Display the Modal
 
@@ -33,24 +39,27 @@ modalCont.addEventListener('keydown', function (e) {
        let key = e.key
 
        if (key == 'Shift') {
-              createTicket(modalPriorityColor) // this function will generate the ticket
+              createTicket(modalPriorityColor , taskAreaCont.value ) // this function will generate the ticket
               modalCont.style.display = 'none'
+              flag = false;
+              taskAreaCont.value = '';
        }
 })
 
 
 
-function createTicket(ticketKaColorClass) {
+function createTicket(ticketKaColorClass  , task) {
        let ticketCont = document.createElement('div')
        ticketCont.setAttribute('class', 'ticket-cont')
 
        ticketCont.innerHTML = `   
        <div class="ticketcolor ${ticketKaColorClass}"></div>
-       <div class="ticket-id"></div>
-       <div class="task-area"></div>
+       <div class="ticket-id">${'#sample id'}</div>
+       <div class="task-area">${task}</div>
   `
 
        mainCont.appendChild(ticketCont)
+       handleRemoval(ticketCont)
 
 
 }
@@ -67,5 +76,26 @@ allPriorityColors.forEach(function(colorElem){
 
             modalPriorityColor = colorElem.classList[0];
        })
-     })
+})
+
+removeBtn.addEventListener('click' , function(){
+
+       removeFlag = !removeFlag
+
+       if(removeFlag==true){
+         removeBtn.style.color = 'red';
+       }
+       else{
+          removeBtn.style.color = 'white'
+       }
+
+})
+
+function handleRemoval(ticket){
+       ticket.addEventListener('click' , function(){
+         if(removeFlag==true){
+           ticket.remove()
+         }
+       })
+}
      

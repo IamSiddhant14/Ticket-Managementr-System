@@ -96,14 +96,14 @@ body {
 .remove-btn>* {
     font-size: xx-large;
     font-weight: bold;
-    color: aliceblue;
+    /* color: aliceblue; */
     transition: font-size .5s ease;
     /* transition: color 1s ease-in; */
 }
 
 .remove-btn>*:hover {
     /* selects all the child element which are present inside this div */
-    color: black;
+    /* color: black; */
     font-size: 3.5em;
 
 }
@@ -136,7 +136,7 @@ body {
     width: 80%;
     outline: none;
     border: 0px;
-    font-size: xx-large;
+    font-size: 50px;
     resize: none;
     padding-top: 10px;
     padding-left: 10px;
@@ -168,6 +168,7 @@ body {
 .main-cont{
      display: flex;
      align-items: center;
+     /* flex-direction: column; */
      justify-content: space-evenly;
      margin-top: 40px;
      flex-wrap: wrap;
@@ -180,6 +181,7 @@ body {
    background-color: black ;
    border-radius: 20px;
    overflow: hidden;
+   margin-top: 20px;
 }
 
 .tic{
@@ -207,8 +209,9 @@ height: 9rem;
 background-color: aliceblue;
 margin: 10px;
 border-radius: 10px;
-font-size: larger;
-padding: 3px;
+font-size: 30px;
+padding: 10px;
+text-transform:capitalize 
 
 }
 
