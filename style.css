@@ -210,7 +210,12 @@ margin: 10px;
 border-radius: 10px;
 font-size: 30px;
 padding: 10px;
+outline: none ;
 /* text-transform:capitalize  */
+word-wrap: break-word;
+white-space: pre-wrap;
+word-break: break-word;
+overflow: scroll;
 
 }
 
@@ -226,5 +231,11 @@ padding: 10px;
     margin-right: 15px; 
     color: white;
     font-size: x-large;
+    transition: font-size .5s ease;
+}
+
+.ticket-lock:hover{
+ color: grey;
+ font-size: 2.0em;
 }
 

@@ -17,6 +17,8 @@ let taskAreaCont = document.querySelector('.textarea-cont')
 let removeBtn = document.querySelector('.remove-btn')
 let removeFlag = false;
 
+let lockClass = "fa-lock";
+let unlockClass = "fa-lock-open";
 
 addBtn.addEventListener("click", function (e) {
        //Display the Modal
@@ -63,7 +65,8 @@ function createTicket(ticketKaColorClass  , task) {
   `
        mainCont.appendChild(ticketCont)
        handleRemoval(ticketCont)
-
+       handleLock(ticketCont);
+       handleColor(ticketCont)
 }
 
 
@@ -106,3 +109,49 @@ function handleRemoval(ticket){
        })
 }
      
+function handleLock(ticket) {
+
+  let ticketLockElem = ticket.querySelector(".ticket-lock");//All the childer inside this class comes in the form of a nodelist
+//   console.log(ticketLockElem)
+
+  let ticketLock = ticketLockElem.children[0];
+//   console.log(ticketLock)
+  let ticketTaskArea = ticket.querySelector('.task-area')
+
+  ticketLock.addEventListener("click", function (e) {
+    if (ticketLock.classList.contains(lockClass)) {
+      ticketLock.classList.remove(lockClass);
+      ticketLock.classList.add(unlockClass);
+      ticketTaskArea.setAttribute('contenteditable' , 'true')
+
+    } else {
+      ticketLock.classList.remove(unlockClass);
+      ticketLock.classList.add(lockClass);
+      ticketTaskArea.setAttribute('contenteditable' , 'false')
+    }
+  });
+}
+
+
+function handleColor(ticket){
+
+  let ticketColorBand = ticket.querySelector('.ticketcolor')
+
+  ticketColorBand.addEventListener('click' , function(e){
+        let currentTicketColor = ticketColorBand.classList[1]
+
+        let currentTicketColoridx = colors.findIndex(function(color){
+          return currentTicketColor === color
+        })
+
+        currentTicketColoridx++
+
+        let newTicketColorIdx = currentTicketColoridx%colors.length
+        let newTicketColor = colors[newTicketColorIdx]
+
+        ticketColorBand.classList.remove(currentTicketColor)
+        ticketColorBand.classList.add(newTicketColor)
+
+
+  })
+}
