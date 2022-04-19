@@ -41,7 +41,7 @@ modalCont.addEventListener('keydown', function (e) {
        let key = e.key
 
        if (key == 'Shift') {
-              createTicket(modalPriorityColor , taskAreaCont.value ) // this function will generate the ticket
+              createTicket(modalPriorityColor , taskAreaCont.value , shortid()) // this function will generate the ticket
               modalCont.style.display = 'none'
               flag = false;
               taskAreaCont.value = '';
@@ -50,14 +50,14 @@ modalCont.addEventListener('keydown', function (e) {
 
 
 
-function createTicket(ticketKaColorClass  , task) {
+function createTicket(ticketKaColorClass  , task , ticketId) {
        let ticketCont = document.createElement('div')
        ticketCont.setAttribute('class', 'ticket-cont')
 
        ticketCont.innerHTML = `   
 
        <div class="ticketcolor ${ticketKaColorClass}"></div>
-       <div class="ticket-id">${'#sample id'}</div>
+       <div class="ticket-id">T-ID:${ticketId}</div>
        <div class="task-area">${task}</div>
        <div class="ticket-lock">
            <i class="fa-solid fa-lock"></i>

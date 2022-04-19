@@ -96,6 +96,7 @@ body {
     font-size: xx-large;
     font-weight: bold;
     /* color: aliceblue; */
+    /* color: aliceblue; */
     transition: font-size .5s ease;
     /* transition: color 1s ease-in; */
 }
@@ -193,7 +194,7 @@ body {
 }
 
 .ticket-id{
-    height: 2rem;
+    height: 1.5rem;
     background-color: azure;
     width: 7rem;
     border-radius: 10px;
@@ -201,10 +202,11 @@ body {
     margin-left: 5px;
     padding: 5px;
     color: black;
+    font-size: small;
 }
 
 .task-area{
-height: 9rem;
+height: 9.5rem;
 background-color: aliceblue;
 margin: 10px;
 border-radius: 10px;
