@@ -53,14 +53,16 @@ function createTicket(ticketKaColorClass  , task) {
        ticketCont.setAttribute('class', 'ticket-cont')
 
        ticketCont.innerHTML = `   
+
        <div class="ticketcolor ${ticketKaColorClass}"></div>
        <div class="ticket-id">${'#sample id'}</div>
        <div class="task-area">${task}</div>
+       <div class="ticket-lock">
+           <i class="fa-solid fa-lock"></i>
+       </div>
   `
-
        mainCont.appendChild(ticketCont)
        handleRemoval(ticketCont)
-
 
 }
 
