@@ -79,9 +79,9 @@ function createTicket(ticketColor, ticketTask , ticketID) {
        </div>
   `
        mainCont.appendChild(ticketCont)
-       handleRemoval(ticketCont)
-       handleLock(ticketCont);
-       handleColor(ticketCont)
+       handleRemoval(ticketCont , id);
+       handleLock(ticketCont , id);
+       handleColor(ticketCont , id);
 
        if(!ticketID){
         ticketsArr.push({ticketColor , ticketTask , ticketID:id})
@@ -121,15 +121,27 @@ removeBtn.addEventListener('click' , function(){
 
 })
 
-function handleRemoval(ticket){
+function handleRemoval(ticket , id){
        ticket.addEventListener('click' , function(){
-         if(removeFlag==true){
-           ticket.remove()
-         }
+
+        if (!removeFlag) return
+
+        let idx = getTicketIdx(id) // idx
+    
+        // localStorgae removal of ticket
+    
+        ticketsArr.splice(idx , 1)
+    
+        let strTicketArray = JSON.stringify(ticketsArr)
+    
+        localStorage.setItem('tickets' , strTicketArray)
+    
+        ticket.remove();
+
        })
 }
      
-function handleLock(ticket) {
+function handleLock(ticket , id) {
 
   let ticketLockElem = ticket.querySelector(".ticket-lock");//All the childer inside this class comes in the form of a nodelist
 //   console.log(ticketLockElem)
@@ -149,11 +161,16 @@ function handleLock(ticket) {
       ticketLock.classList.add(lockClass);
       ticketTaskArea.setAttribute('contenteditable' , 'false')
     }
+
+    let ticketIdx = getTicketIdx(id)
+    ticketsArr[ticketIdx].ticketTask = ticketTaskArea.innerText
+    localStorage.setItem('tickets' , JSON.stringify(ticketsArr))
+
   });
 }
 
 
-function handleColor(ticket){
+function handleColor(ticket , id){
 
   let ticketColorBand = ticket.querySelector('.ticketcolor')
 
@@ -171,6 +188,16 @@ function handleColor(ticket){
 
         ticketColorBand.classList.remove(currentTicketColor)
         ticketColorBand.classList.add(newTicketColor)
+
+        let ticketIdx = getTicketIdx(id)
+
+        ticketsArr[ticketIdx].ticketColor = newTicketColor
+        localStorage.setItem('tickets' , JSON.stringify(ticketsArr))
+
+            // modify with new color
+
+    ticketsArr[ticketIdx].ticketColor = newTicketColor
+    localStorage.setItem('tickets' , JSON.stringify(ticketsArr))
 
 
   })
@@ -215,5 +242,14 @@ for(let i=0 ; i<toolBoxColors.length ; i++){
 
     })
   })
+}
+
+function getTicketIdx(id){
+  
+  let ticketIdx = ticketsArr.findIndex(function(ticketObj){
+          return ticketObj.ticketID === id
+  }) 
+
+  return ticketIdx
 }
 
