@@ -26,6 +26,13 @@ let ticketsArr = []
 let lockClass = "fa-lock";
 let unlockClass = "fa-lock-open";
 
+if(localStorage.getItem('tickets')){
+  ticketsArr = JSON.parse(localStorage.getItem('tickets'))
+  ticketsArr.forEach(function(ticket){
+    createTicket(ticket.ticketColor , ticket.ticketTask , ticket.ticketID)
+  })
+}
+
 addBtn.addEventListener("click", function (e) {
        //Display the Modal
 
@@ -65,7 +72,7 @@ function createTicket(ticketColor, ticketTask , ticketID) {
        ticketCont.innerHTML = `   
 
        <div class="ticketcolor ${ticketColor}"></div>
-       <div class="ticket-id">T-ID:${ticketID}</div>
+       <div class="ticket-id">ID: ${id}</div>
        <div class="task-area">${ticketTask}</div>
        <div class="ticket-lock">
            <i class="fa-solid fa-lock"></i>
@@ -78,6 +85,7 @@ function createTicket(ticketColor, ticketTask , ticketID) {
 
        if(!ticketID){
         ticketsArr.push({ticketColor , ticketTask , ticketID:id})
+        localStorage.setItem('tickets' , JSON.stringify(ticketsArr) )
        }
 }
 
@@ -174,7 +182,7 @@ for(let i=0 ; i<toolBoxColors.length ; i++){
 
   toolBoxColors[i].addEventListener('click' , function(e){
     let currentToolBoxColor =  toolBoxColors[i].classList[0]
-    console.log(currentToolBoxColor)
+    // console.log(currentToolBoxColor)
 
 
     let filteredTickets = ticketsArr.filter(function(ticketObj){
@@ -192,7 +200,20 @@ for(let i=0 ; i<toolBoxColors.length ; i++){
              createTicket(filteredObj.ticketColor , filteredObj.ticketTask , filteredObj.ticketID)
      })
 
+  })
 
+  toolBoxColors[i].addEventListener('dblclick' , function(e){
+    let allTickets = document.querySelectorAll(".ticket-cont");
 
+    for (let i = 0; i < allTickets.length; i++) {
+      allTickets[i].remove();
+    }
+
+    ticketsArr.forEach(function(ticketObj){
+
+      createTicket(ticketObj.ticketColor , ticketObj.ticketTask , ticketObj.ticketID)
+
+    })
   })
 }
+
