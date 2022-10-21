@@ -1,0 +1,257 @@
+body{
+    background-color: rgb(199,194,194);
+}
+
+* {
+    box-sizing: border-box;
+    /* Here it mean all things are including in the height and width: */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+}
+
+.toolbox-cont {
+    display: flex;
+    height: 8rem;
+    width: 95%;
+    background-color: black;
+    align-items: center;
+    border-radius: 20px;
+    margin-left:30px;
+    margin-top: 10px;
+
+}
+
+.toolbox-cont>* {
+    margin-left: 4rem;
+    border-radius: 3px;
+
+}
+
+
+
+.toolbox-priority-cont {
+    height: 3.5rem;
+    width: 24rem;
+    background-color: #596275;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 10px;
+}
+
+.toolbox-priority-cont>div {
+    
+    width: 2rem;
+    margin-left: 3px;
+    margin-right: 3px;
+   
+}
+
+.action-btn-cont {
+    height: 3.5rem;
+    width: 15rem;
+    background-color: #596275;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 300px;
+    border-radius: 10px;
+}
+
+.color {
+    height: 2rem;
+    width: 3.5rem;
+    /* display: flex; */
+    /* justify-content: center;
+    align-items: center; */
+    /* font-size:small ; */
+    border-radius: 5px;
+}
+
+.color:hover {
+    -webkit-box-shadow: inset 6px -3px 59px -29px rgba(8,8,8,1);
+    -moz-box-shadow: inset 6px -3px 59px -29px rgba(8,8,8,1);
+    box-shadow: inset 6px -3px 59px -29px rgba(8,8,8,1);
+}
+
+.lightpink {
+    background-color: rgb(255, 0, 0);
+}
+
+.lightgreen {
+    background-color: rgb(226, 254, 12);
+}
+
+.lightblue {
+    background-color: rgb(126, 199, 227);
+}
+
+.black {
+    background-color: rgb(233, 241, 233);
+}
+
+.add-btn>* {
+    font-size: xx-large;
+    font-weight: bold;
+    color: aliceblue;
+    transition: font-size .5s ease;
+    margin-left: 6px;
+    /* transition: color 1s ease-in; */
+}
+
+.remove-btn>* {
+    font-size: xx-large;
+    font-weight: bold;
+    /* color: aliceblue; */
+    /* color: aliceblue; */
+    transition: font-size .5s ease;
+    margin-left: 6px;
+    margin-right: 6px;
+    /* transition: color 1s ease-in; */
+}
+
+.remove-btn>*:hover {
+    /* selects all the child element which are present inside this div */
+    /* color: black; */
+    font-size: 3.5em;
+
+}
+
+.add-btn>*:hover {
+    /* color: black; */
+    font-size: 3.5em;
+
+}
+
+
+.modal-cont {
+    height: 50vh;
+    width: 45vw;
+    background: black;
+    /* With postion absolute it becames indepent of the screen */
+    position: absolute;
+    top: calc((100vh - 50vh) / 2);
+    left: calc((100vw - 45vw) / 2);
+    border-radius: 15px;
+    display: none;
+    overflow: hidden;
+
+    
+}
+
+.textarea-cont{
+
+    height : 100%;
+    width: 80%;
+    outline: none;
+    color: #C7C2C2;
+    border: 0px;
+    font-size: 20px;
+    resize: none;
+    padding-top: 10px;
+    padding-left: 10px;
+    
+}
+
+.priority-colors-cont{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  
+}
+
+.priority-color{
+    height: 3rem;
+    width: 5rem;
+    border-radius: 5px;
+}
+
+.priority-color:hover {
+    -webkit-box-shadow: inset 6px -3px 59px -29px rgba(8,8,8,1);
+    -moz-box-shadow: inset 6px -3px 59px -29px rgba(8,8,8,1);
+    box-shadow: inset 6px -3px 59px -29px rgba(8,8,8,1);
+}
+
+.main-cont{
+     display: flex;
+     align-items: center;
+     /* flex-direction: column; */
+     justify-content: space-evenly;
+     margin-top: 40px;
+     flex-wrap: wrap;
+     
+}
+
+.ticket-cont{
+   height: 17rem;
+   width: 18rem;
+   background-color: black ;
+   border-radius: 20px;
+   overflow: hidden;
+   margin-top: 20px;
+}
+
+.tic{
+    background-color: black ; 
+}
+
+.ticketcolor{
+    height: 2rem;
+    /* background-color: unset; */
+}
+
+.ticket-id{
+    height: 1.5rem;
+    background-color: azure;
+    width: 7rem;
+    border-radius: 10px;
+    margin-top: 8px;
+    margin-left: 5px;
+    padding: 5px;
+    color: black;
+    font-size: small;
+}
+
+.task-area{
+height: 9.5rem;
+background-color: aliceblue;
+margin: 10px;
+border-radius: 10px;
+font-size: 30px;
+padding: 10px;
+outline: none ;
+/* text-transform:capitalize  */
+word-wrap: break-word;
+white-space: pre-wrap;
+word-break: break-word;
+overflow: scroll;
+
+}
+
+.active{
+    border: 10px solid black; 
+}
+
+.ticket-lock{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 75px;
+    margin-top: -2px;
+    margin-right: 15px; 
+    color: white;
+    font-size: x-large;
+    transition: font-size .5s ease;
+}
+
+.ticket-lock:hover{
+ color: grey;
+ font-size: 2.0em;
+}
+
